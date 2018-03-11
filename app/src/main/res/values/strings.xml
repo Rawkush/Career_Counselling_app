@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">hackathon</string>
     <string name="title">Career Options in India</string>
+
+
+    <string name="description"> Choosing a right career option is the most vital decision in everyone\'s life. Students may goes through a dilemma of choosing a career after completing their 10th, 12th or graduation. Apart from the top paying and common career options such as Medical, Engineering, Management, Chartered Accountancy etc., numerous other options are available in the field of Health Care, Travel and Tourism, Media and so on. The choice of a career depends on the job prospects of the field and most certainly the interest of the candidate </string>
+
+
+
 </resources>
