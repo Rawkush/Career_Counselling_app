@@ -1,9 +1,15 @@
 package com.example.ankush.hackathon;
 
 import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -135,6 +141,39 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
                 break;
         }
         return ContextCompat.getColor(getContext(), ColorResourceId);
+    }
+
+
+
+//setting view
+
+
+    @NonNull
+    @Override
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        LayoutInflater myinflater= LayoutInflater.from(getContext());
+        View view=convertView;
+        data_with_link details= getItem(position);
+        if(view==null) {
+            view = myinflater.inflate(R.layout.adapter, parent, false);
+        }
+
+        TextView textView1 = (TextView) view.findViewById(R.id.letter);
+
+        TextView textView2 = (TextView) view.findViewById(R.id.name);
+
+        // Display the magnitude of the current earthquake in that TextView
+        textView1.setText(details.getAplhabet());
+        GradientDrawable magnitudeCircle = (GradientDrawable) textView1.getBackground();
+
+        // Get the appropriate background color based on the current earthquake magnitude
+        int magnitudeColor = getMagnitudeColor(details.getAplhabet());
+
+        // Set the color on the magnitude circle
+        magnitudeCircle.setColor(magnitudeColor);
+        return view;
+
+
     }
 
 
