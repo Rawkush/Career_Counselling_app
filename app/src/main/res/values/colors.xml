@@ -4,4 +4,77 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="header">#607D8B</color>
+
+
+
+
+
+
+    <color name="A">#4A7BA7</color>
+
+    <!-- Magnitude circle color for an earthquake with magnitude between 2 and 3 -->
+    <color name="B">#04B4B3</color>
+
+    <!-- Magnitude circle color for an earthquake with magnitude between 3 and 4 -->
+    <color name="C">#10CAC9</color>
+
+    <!-- Magnitude circle color for an earthquake with magnitude between 4 and 5 -->
+    <color name="D">#F5A623</color>
+
+    <!-- Magnitude circle color for an earthquake with magnitude between 5 and 6 -->
+    <color name="E">#FF7D50</color>
+
+    <!-- Magnitude circle color for an earthquake with magnitude between 6 and 7 -->
+    <color name="F">#FC6644</color>
+
+    <!-- Magnitude circle color for an earthquake with magnitude between 7 and 8 -->
+    <color name="G">#E75F40</color>
+
+    <!-- Magnitude circle color for an earthquake with magnitude between 8 and 9 -->
+    <color name="H">#E13A20</color>
+
+    <!-- Magnitude circle color for an earthquake with magnitude between 9 and 10 -->
+    <color name="I">#D93218</color>
+
+    <!-- Magnitude circle color for an earthquake with magnitude over 10 -->
+    <color name="J">#C03823</color>
+
+    <!-- Text color for the details of the earthquake in the list item -->
+    <color name="K">#B4BAC0</color>
+
+    <color name="L">#EF5350</color>
+
+    <color name="M">#4A148C</color>
+
+    <color name="N">#EA80FC</color>
+
+    <color name="O">#F50057</color>
+
+    <color name="P">#C51162</color>
+
+    <color name="Q">#90CAF9</color>
+
+    <color name="R">#0D47A1</color>
+
+    <color name="S">#311B92</color>
+
+    <color name="T">#B2DFDB</color>
+
+    <color name="U">#84FFFF</color>
+
+    <color name="V">#43A047</color>
+
+    <color name="W">#AFB42B</color>
+
+    <color name="X">#FFEB3B</color>
+
+    <color name="Y">#FF9800</color>
+
+    <color name="Z">#B4BAC0</color>
+    <!-- Text color for the primary location of the earthquake in the list item -->
+    <color name="textColorEarthquakeLocation">#2B3D4D</color>
+
+
+
+
 </resources>
