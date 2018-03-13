@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
 import java.util.ArrayList;
+
 
 /**
  * Created by Ankush on 3/11/2018.
@@ -24,11 +24,11 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
         super(context,0, objects);
     }
 
-    private int getMagnitudeColor(String Alphabet) {
+    private int getMagnitudeColor(char Alphabet) {
         int ColorResourceId;
 
-        char ch =Alphabet.charAt(0);
-        switch (ch) {
+
+        switch (Alphabet) {
 
             case 'a':
             case 'A':
@@ -147,13 +147,14 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
 
 //setting view
 
-
-    @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater myinflater= LayoutInflater.from(getContext());
+
         View view=convertView;
-        data_with_link details= getItem(position);
+
+        data_with_link details = getItem(position);
+
         if(view==null) {
             view = myinflater.inflate(R.layout.adapter, parent, false);
         }
@@ -163,19 +164,23 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
         TextView textView2 = (TextView) view.findViewById(R.id.name);
 
         // Display the magnitude of the current earthquake in that TextView
-        textView1.setText(details.getAplhabet());
+        String s= null;
+        if (details != null) {
+            s = String.valueOf(details.getAlphabets());
+
+        textView1.setText(s);
         GradientDrawable magnitudeCircle = (GradientDrawable) textView1.getBackground();
 
         // Get the appropriate background color based on the current earthquake magnitude
-        int magnitudeColor = getMagnitudeColor(details.getAplhabet());
+        int magnitudeColor = getMagnitudeColor(details.getAlphabets());
 
         // Set the color on the magnitude circle
         magnitudeCircle.setColor(magnitudeColor);
+        }
         return view;
 
 
     }
-
 
 
 

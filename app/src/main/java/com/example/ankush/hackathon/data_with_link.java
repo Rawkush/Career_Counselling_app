@@ -1,8 +1,5 @@
 package com.example.ankush.hackathon;
 
-import java.net.URI;
-import java.net.URL;
-
 /**
  * Created by Ankush on 3/11/2018.
  */
@@ -10,12 +7,12 @@ import java.net.URL;
 public class data_with_link {
 
     private String title;
-    private String aplhabet;
-    private URL url;
+    private char alphabets;
+    private String url;
 
-public data_with_link(String aplhabet,String title, URL url){
+public data_with_link(char alphabets, String title, String url){
 
-    this.aplhabet=aplhabet;
+    this.alphabets =alphabets;
     this.title=title;
     this.url=url;
 }
@@ -26,12 +23,12 @@ public String getTitle(){
     return title;
 }
 
-public String getAplhabet(){
-    return  aplhabet;
+public char getAlphabets(){
+    return alphabets;
 }
 
 
-public URL getUrl(){
+public String getUrl(){
     return url;
 }
 

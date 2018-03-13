@@ -14,7 +14,7 @@ public class options extends AppCompatActivity {
     }
 
     public void alphabet(View view){
-        Intent intent= new Intent(this,alphabetList.class);
+        Intent intent= new Intent(this,AlphabetDisplayListActivity.class);
         startActivity(intent);
     }
 }
