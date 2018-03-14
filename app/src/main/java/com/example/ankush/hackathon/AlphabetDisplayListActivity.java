@@ -1,11 +1,13 @@
 package com.example.ankush.hackathon;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -34,7 +36,7 @@ private alphabetAdapter mAdapter;
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
 
-       EarthquakeAsyncTask task = new EarthquakeAsyncTask();
+       ListAsyncTask task = new ListAsyncTask();
 
         task.execute("https://career.webindia123.com/career/options/asp/alpha_listing.asp");
 
@@ -45,24 +47,29 @@ private alphabetAdapter mAdapter;
 
 
         dataListView.setAdapter(mAdapter);
-      /**
-        earthquakeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        dataListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                // Find the current earthquake that was clicked on
-                Earthquake currentEarthquake = mAdapter.getItem(position);
+                // Find the current  that was clicked on
+                data_with_link currentdata = mAdapter.getItem(position);
 
                 // Convert the String URL into a URI object (to pass into the Intent constructor)
-                Uri earthquakeUri = Uri.parse(currentEarthquake.getUrl());
+                Uri careerListUri = Uri.parse(currentdata.getUrl());
 
                 // Create a new intent to view the earthquake URI
-                Intent websiteIntent = new Intent(Intent.ACTION_VIEW, earthquakeUri);
+              //  Intent websiteIntent = new Intent(Intent.ACTION_VIEW, careerListUri);
 
                 // Send the intent to launch a new activity
-                startActivity(websiteIntent);
+               // startActivity(websiteIntent);
+
+                Intent intent = new Intent(getBaseContext(), selectedCareerDetails.class);
+                intent.putExtra("url",careerListUri);
+                startActivity(intent);
+
             }
         });
-       **/
+
     }
 
 
@@ -72,7 +79,7 @@ private alphabetAdapter mAdapter;
     //assync task
 
     @SuppressLint("StaticFieldLeak")
-    private  class EarthquakeAsyncTask extends AsyncTask<String, Void, ArrayList<data_with_link>> {
+    private  class ListAsyncTask extends AsyncTask<String, Void, ArrayList<data_with_link>> {
 
         @Override
         protected ArrayList<data_with_link> doInBackground(String... urls) {
