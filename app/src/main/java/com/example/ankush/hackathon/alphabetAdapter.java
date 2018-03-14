@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -19,9 +20,13 @@ import java.util.ArrayList;
 
 public class alphabetAdapter extends ArrayAdapter<data_with_link> {
 
+    private Context mContext;
+    private ArrayList<data_with_link> detailsList = new ArrayList<>();
 
     public alphabetAdapter(@NonNull Context context, @NonNull ArrayList<data_with_link> objects) {
         super(context,0, objects);
+        mContext=context;
+        detailsList= objects;
     }
 
     private int getMagnitudeColor(char Alphabet) {
@@ -147,21 +152,22 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
 
 //setting view
 
+    @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater myinflater= LayoutInflater.from(getContext());
+        //LayoutInflater myinflater= LayoutInflater.from(getContext());
 
-        View view=convertView;
+        View listItem = convertView;
 
         data_with_link details = getItem(position);
 
-        if(view==null) {
-            view = myinflater.inflate(R.layout.adapter, parent, false);
-        }
+        if(listItem == null)
+            listItem = LayoutInflater.from(mContext).inflate(R.layout.adapter,parent,false);
 
-        TextView textView1 = (TextView) view.findViewById(R.id.letter);
 
-        TextView textView2 = (TextView) view.findViewById(R.id.name);
+        TextView textView1 = (TextView) listItem.findViewById(R.id.letter);
+
+        TextView textView2 = (TextView) listItem.findViewById(R.id.name);
 
         // Display the magnitude of the current earthquake in that TextView
         String s= null;
@@ -171,13 +177,14 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
         textView1.setText(s);
         GradientDrawable magnitudeCircle = (GradientDrawable) textView1.getBackground();
 
+        textView2.setText(details.getTitle());
         // Get the appropriate background color based on the current earthquake magnitude
         int magnitudeColor = getMagnitudeColor(details.getAlphabets());
 
         // Set the color on the magnitude circle
         magnitudeCircle.setColor(magnitudeColor);
         }
-        return view;
+        return listItem;
 
 
     }

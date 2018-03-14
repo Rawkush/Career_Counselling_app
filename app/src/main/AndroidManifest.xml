@@ -19,5 +19,5 @@
         <activity android:name=".options" />
         <activity android:name=".AlphabetDisplayListActivity"></activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
