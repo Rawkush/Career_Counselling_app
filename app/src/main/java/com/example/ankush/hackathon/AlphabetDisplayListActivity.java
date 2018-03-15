@@ -64,7 +64,7 @@ private alphabetAdapter mAdapter;
                // startActivity(websiteIntent);
 
                 Intent intent = new Intent(getBaseContext(), selectedCareerDetails.class);
-                intent.putExtra("url",careerListUri);
+                intent.putExtra("url",currentdata.getUrl());
                 startActivity(intent);
 
             }
