@@ -71,11 +71,9 @@ private ImageView imageView;
 
                 Document doc = Jsoup.connect(urls[0]).get();
                 // String title = doc.title();
-                Elements subcontainer = doc.select("div#subcontainer");
+                Elements subcontainer = doc.select("div#subcontainer p");
                 Elements listCareer = doc.select("div.span_30 td");
                 Elements linkss = listCareer.select("a[href]");
-
-
                 Elements image =listCareer.select("img[src]");                //for image displaying
                 String urlForImage = image.attr("src");
 
@@ -87,15 +85,28 @@ private ImageView imageView;
 
                 publishProgress(mIcon11); // calling progressupdate method
 
-
                 for (Element link : linkss) {
                     //copiyng 4 url options available
                     temp.add(new data_with_link(link.text().charAt(0),link.text(), initialUrl + link.attr("href")));
                     Log.i("lol; ",temp.get(0).getTitle());
 
                 }
+//check here
 
-                temp.add(new data_with_link('a',subcontainer.text(),""));
+                for(Element e: subcontainer ) {
+
+                    if (e.text().length() < 20){
+                        temp.add(new data_with_link('a', e.text(), "null"));
+                }else
+                    if(e.text().length()<50)
+                    {
+                        temp.add(new data_with_link('a', e.text(), "small"));
+                    }else
+                        temp.add(new data_with_link('a', e.text(), ""));
+
+                }
+
+
 
             } catch (IOException e) {
                 Log.i("a","aa");
@@ -118,22 +129,49 @@ private ImageView imageView;
             // Clear the adapter of previous earthquake data
 
             for(int i=0; i<data.size()  ;i++){
-
-                if((i+1)==data.size()){
+//check here
+                if(data.get(i).getUrl().equals("null"))
+                {
                     TextView textView= new TextView(getBaseContext());
                     textView.setId(i);
                     textView.setText(data.get(i).getTitle());
+                    textView.setPadding(8,6,6,4);
 
+                    textView.setTextSize(25);
+                    textView.setTextColor(ContextCompat.getColor(getBaseContext(), R.color.V));
+                    linearLayout.addView(textView);
+
+                }else
+                if(data.get(i).getUrl().equals("small"))
+                {
+                    TextView textView= new TextView(getBaseContext());
+                    textView.setId(i);
+                    textView.setText(data.get(i).getTitle());
+                    textView.setPadding(8,6,7,4);
+                    textView.setTextSize(18);
+
+                    textView.setTextColor(ContextCompat.getColor(getBaseContext(), R.color.P));
+                    linearLayout.addView(textView);
+
+
+                }else
+                if(data.get(i).getUrl().equals("")){    //check here
+                    TextView textView= new TextView(getBaseContext());
+                    textView.setId(i);
+                    textView.setPadding(8,6,7,4);
+                    textView.setText(data.get(i).getTitle());
                     textView.setTextColor(ContextCompat.getColor(getBaseContext(), R.color.D));
                     linearLayout.addView(textView);
-                    break;
                 }else
                 {
                    final String url=data.get(i).getUrl();
                     TextView textView= new TextView(getBaseContext());
                     textView.setId(i);
+                    textView.setTextSize(18);
+                    textView.setPadding(8,4,0,4);
                     textView.setTextColor(ContextCompat.getColor(getBaseContext(), R.color.colorPrimary));
-                    textView.setText(data.get(i).getTitle());
+                   String s=">>"+data.get(i).getTitle();
+                    textView.setText(s);
                     linearLayout.addView(textView);
                     textView.setOnClickListener(new View.OnClickListener() {
                         public void onClick(View v) {
@@ -144,7 +182,8 @@ private ImageView imageView;
                             // Log.i("TAG", "The index is" + index);
                         }
                     });
-Log.i("ahghsjdga","ajshdjajh");
+
+                    Log.i("ahghsjdga","ajshdjajh");
 
                 }
 
