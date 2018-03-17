@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ankush.hackathon.MainActivity">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.ankush.hackathon.firstPage"
+    tools:showIn="@layout/app_bar_first_page">
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,7 +21,7 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="155dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:contentDescription="@string/title"

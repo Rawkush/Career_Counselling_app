@@ -17,4 +17,13 @@ public class options extends AppCompatActivity {
         Intent intent= new Intent(this,AlphabetDisplayListActivity.class);
         startActivity(intent);
     }
+
+    public void after_ten(View view){
+
+        Intent intent= new Intent(this,after_tenth.class);
+        startActivity(intent);
+
+    }
+
+
 }

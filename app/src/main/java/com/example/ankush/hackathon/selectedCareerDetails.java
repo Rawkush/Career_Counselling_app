@@ -27,6 +27,7 @@ import java.util.ArrayList;
 public class selectedCareerDetails extends AppCompatActivity {
 private LinearLayout linearLayout;
 private ImageView imageView;
+private    TextView header;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,7 @@ private ImageView imageView;
         Log.i("jhs",url);
 
         imageView= (ImageView) findViewById(R.id.jobImage);
-
+        header=(TextView)findViewById(R.id.title);
 
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
         ListAsyncTask task = new ListAsyncTask();
@@ -77,8 +78,8 @@ private ImageView imageView;
                 Elements image =listCareer.select("img[src]");                //for image displaying
                 String urlForImage = image.attr("src");
 
-                Log.v("shgj",urlForImage);
-
+                Elements s=doc.select("div#subcontainer h1");
+                temp.add(new data_with_link('a',s.text(),"head"));
                 InputStream in = new java.net.URL(initialUrl+urlForImage).openStream();
 
                 mIcon11 = BitmapFactory.decodeStream(in);
@@ -130,6 +131,11 @@ private ImageView imageView;
 
             for(int i=0; i<data.size()  ;i++){
 //check here
+
+                if(i==0){
+
+                header.setText(data.get(0).getTitle());
+                }else
                 if(data.get(i).getUrl().equals("null"))
                 {
                     TextView textView= new TextView(getBaseContext());
