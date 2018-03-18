@@ -14,8 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class firstPage extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class firstPage extends AppCompatActivity        implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,10 +81,19 @@ public class firstPage extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
 
-        } else if (id == R.id.nav_slideshow) {
+
+
+            // Handle the camera action
+        } else if (id == R.id.careerOptions) {
+
+            Intent intent =new Intent(this,options.class);
+            startActivity(intent);
+
+
+        } else if (id == R.id.videos) {
+            Intent intent =new Intent(this,careerVideos.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_manage) {
 
