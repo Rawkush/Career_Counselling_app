@@ -11,25 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".options" />
-        <activity android:name=".AlphabetDisplayListActivity" />
-        <activity android:name=".selectedCareerDetails" />
-        <activity android:name=".after_tenth" />
-        <activity
-            android:name=".firstPage"
-            android:label="@string/title_activity_first_page"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".AlphabetDisplayListActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".careerVideos"></activity>
+
+        <activity android:name=".selectedCareerDetails" />
 
 
         <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing"
-            android:value="false" />
+            android:value="false"
+            />
     </application>
 
 </manifest>
