@@ -80,6 +80,7 @@ private    TextView header;
 
                 Elements s=doc.select("div#subcontainer h1");
                 temp.add(new data_with_link('a',s.text(),"head"));
+
                 InputStream in = new java.net.URL(initialUrl+urlForImage).openStream();
 
                 mIcon11 = BitmapFactory.decodeStream(in);
