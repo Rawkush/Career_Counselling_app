@@ -4,10 +4,14 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -20,18 +24,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlphabetDisplayListActivity extends AppCompatActivity {
+public class AlphabetDisplayListActivity extends Fragment {
 private alphabetAdapter mAdapter;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alphabet_display_list);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+     View view=   inflater.inflate(R.layout.activity_alphabet_display_list, container,false);
+    // setContentView(R.layout.activity_alphabet_display_list);
+      // LayoutInflater.inflate(R.layout.fragment_main, , false);
         // Find a reference to the {@link ListView} in the layout
-        ListView dataListView = (ListView) findViewById(R.id.list);
+        ListView dataListView = (ListView) view.findViewById(R.id.list);
         final ArrayList<data_with_link> temp= new ArrayList<>();
         // Create a new adapter that takes an empty list of earthquakes as input
-        mAdapter = new alphabetAdapter(this, new ArrayList<data_with_link>());
+        mAdapter = new alphabetAdapter(getContext(), new ArrayList<data_with_link>());
 
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
@@ -43,10 +50,10 @@ private alphabetAdapter mAdapter;
      //   ArrayList<data_with_link> a= AlphabetOrderDataExtraction.fetchData(("https://career.webindia123.com/career/options/asp/alpha_listing.asp"));
         // Set an item click listener on the ListView, which sends an intent to a web browser
         // to open a website with more information about the selected earthquake.
-        mAdapter = new alphabetAdapter(this, temp );
+        mAdapter = new alphabetAdapter(getContext(), temp );
 
 
-        dataListView.setAdapter(mAdapter);
+          dataListView.setAdapter(mAdapter);
 
         dataListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -63,12 +70,14 @@ private alphabetAdapter mAdapter;
                 // Send the intent to launch a new activity
                // startActivity(websiteIntent);
 
-                Intent intent = new Intent(getBaseContext(), selectedCareerDetails.class);
-                intent.putExtra("url",currentdata.getUrl());
-                startActivity(intent);
+              //  Intent intent = new Intent(getContext(), selectedCareerDetails.class);
+                //intent.putExtra("url",currentdata.getUrl());
+                //startActivity(intent);
 
             }
         });
+        return view;
+
 
     }
 
