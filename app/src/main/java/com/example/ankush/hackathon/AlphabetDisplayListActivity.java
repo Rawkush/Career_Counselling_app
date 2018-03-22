@@ -33,7 +33,7 @@ private alphabetAdapter mAdapter;
 
      View view=   inflater.inflate(R.layout.activity_alphabet_display_list, container,false);
     // setContentView(R.layout.activity_alphabet_display_list);
-      // LayoutInflater.inflate(R.layout.fragment_main, , false);
+      // LayoutInflater.inflate(R.layout.tab2, , false);
         // Find a reference to the {@link ListView} in the layout
         ListView dataListView = (ListView) view.findViewById(R.id.list);
         final ArrayList<data_with_link> temp= new ArrayList<>();
