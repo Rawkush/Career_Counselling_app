@@ -34,7 +34,7 @@ import java.util.List;
 
 public class alphabetAdapter extends ArrayAdapter<data_with_link> {
 
-
+/*
     public class image{
 
         private Integer position;
@@ -62,7 +62,7 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
         }
     }
 
-
+*/
     private Context mContext;
     private View tempView;
     private String myActivityName;
@@ -214,12 +214,12 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
             if (listItem == null)
                 listItem = LayoutInflater.from(mContext).inflate(R.layout.adapter, parent, false);
 
-
+/*
             ListAsyncTask listAsyncTask = new ListAsyncTask();
             ImageView imageView = (ImageView) listItem.findViewById(R.id.listImage);
             image i = new image(position, imageView);
             listAsyncTask.execute(i);
-
+*/
             TextView textView2 = (TextView) listItem.findViewById(R.id.name);
 
             // Display the magnitude of the current earthquake in that TextView
@@ -273,7 +273,7 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
 
 
 
-
+/**
 
 
     @SuppressLint("StaticFieldLeak")
@@ -405,7 +405,7 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
     }
 
 
-*/
+**/
 
 
 }
