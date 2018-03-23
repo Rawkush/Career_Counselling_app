@@ -35,6 +35,7 @@ private alphabetAdapter mAdapter;
     // setContentView(R.layout.activity_alphabet_display_list);
       // LayoutInflater.inflate(R.layout.tab2, , false);
         // Find a reference to the {@link ListView} in the layout
+
         ListView dataListView = (ListView) view.findViewById(R.id.list);
         final ArrayList<data_with_link> temp= new ArrayList<>();
         // Create a new adapter that takes an empty list of earthquakes as input
@@ -70,9 +71,9 @@ private alphabetAdapter mAdapter;
                 // Send the intent to launch a new activity
                // startActivity(websiteIntent);
 
-              //  Intent intent = new Intent(getContext(), selectedCareerDetails.class);
-                //intent.putExtra("url",currentdata.getUrl());
-                //startActivity(intent);
+               Intent intent = new Intent(getContext(), selectedCareerDetails.class);
+                intent.putExtra("url",currentdata.getUrl());
+                startActivity(intent);
 
             }
         });
