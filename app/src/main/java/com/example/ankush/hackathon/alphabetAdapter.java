@@ -1,15 +1,29 @@
 package com.example.ankush.hackathon;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.GradientDrawable;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,13 +34,45 @@ import java.util.List;
 
 public class alphabetAdapter extends ArrayAdapter<data_with_link> {
 
+/*
+    public class image{
+
+        private Integer position;
+        private ImageView imageView;
+        private Bitmap bitmap=null;
+        public image(Integer integer,ImageView imageView)
+        {
+            this.position=integer;
+            this.imageView=imageView;
+        }
+        public image(Integer integer,ImageView imageView,Bitmap bitmap){
+            this.bitmap=bitmap;
+            this.position=integer;
+            this.imageView=imageView;
+        }
+
+        public Integer getPosition(){
+            return  position;
+        }
+        public ImageView getImageView(){
+            return imageView;
+        }
+        public Bitmap getBitmap(){
+            return bitmap;
+        }
+    }
+
+*/
     private Context mContext;
+    private View tempView;
+    private String myActivityName;
     private ArrayList<data_with_link> detailsList = new ArrayList<>();
 
-    public alphabetAdapter(@NonNull Context context, @NonNull ArrayList<data_with_link> objects) {
+    public alphabetAdapter(@NonNull Context context, @NonNull ArrayList<data_with_link> objects,String ActivityNAme) {
         super(context,0, objects);
         mContext=context;
         detailsList= objects;
+        myActivityName=ActivityNAme;
     }
 
     private int getMagnitudeColor(char Alphabet) {
@@ -158,33 +204,66 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
         //LayoutInflater myinflater= LayoutInflater.from(getContext());
 
         View listItem = convertView;
-
         data_with_link details = getItem(position);
+      //  final String pic = details.getUrl();
 
-        if(listItem == null)
-            listItem = LayoutInflater.from(mContext).inflate(R.layout.adapter,parent,false);
+        tempView= listItem;
 
+        if(myActivityName.equals("AlphabetDisplayList")) {
 
-        TextView textView1 = (TextView) listItem.findViewById(R.id.letter);
+            if (listItem == null)
+                listItem = LayoutInflater.from(mContext).inflate(R.layout.adapter, parent, false);
 
-        TextView textView2 = (TextView) listItem.findViewById(R.id.name);
+/*
+            ListAsyncTask listAsyncTask = new ListAsyncTask();
+            ImageView imageView = (ImageView) listItem.findViewById(R.id.listImage);
+            image i = new image(position, imageView);
+            listAsyncTask.execute(i);
+*/
+            TextView textView2 = (TextView) listItem.findViewById(R.id.name);
 
-        // Display the magnitude of the current earthquake in that TextView
-        String s= null;
-        if (details != null) {
-            s = String.valueOf(details.getAlphabets());
+            // Display the magnitude of the current earthquake in that TextView
+            String s = null;
+            if (details != null) {
+                s = String.valueOf(details.getAlphabets());
 
-        textView1.setText(s);
-        GradientDrawable magnitudeCircle = (GradientDrawable) textView1.getBackground();
+               // textView1.setText(s);
+               // GradientDrawable magnitudeCircle = (GradientDrawable) textView1.getBackground();
 
-        textView2.setText(details.getTitle());
-        // Get the appropriate background color based on the current earthquake magnitude
-        int magnitudeColor = getMagnitudeColor(details.getAlphabets());
+                textView2.setText(details.getTitle());
+                // Get the appropriate background color based on the current earthquake magnitude
+              //  int magnitudeColor = getMagnitudeColor(details.getAlphabets());
 
-        // Set the color on the magnitude circle
-        magnitudeCircle.setColor(magnitudeColor);
+                // Set the color on the magnitude circle
+              //  magnitudeCircle.setColor(magnitudeColor);
+            }
+        }else
+        if(myActivityName.equals("ScholarshipListActivity")) {
+
+            if (listItem == null)
+                listItem = LayoutInflater.from(mContext).inflate(R.layout.scholarship_adapter, parent, false);
+
+            TextView textView1 = (TextView) listItem.findViewById(R.id.scholar_letter);
+
+            TextView textView2 = (TextView) listItem.findViewById(R.id.scholar_title);
+            String s = null;
+            if (details != null) {
+                s = String.valueOf(details.getAlphabets());
+
+                textView1.setText(s);
+                GradientDrawable magnitudeCircle = (GradientDrawable) textView1.getBackground();
+
+                textView2.setText(details.getTitle());
+                // Get the appropriate background color based on the current earthquake magnitude
+                int magnitudeColor = getMagnitudeColor(details.getAlphabets());
+
+                // Set the color on the magnitude circle
+                magnitudeCircle.setColor(magnitudeColor);
+            }
+
         }
-        return listItem;
+
+            return listItem;
 
 
     }
@@ -192,6 +271,141 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
 
 
 
+
+
+/**
+
+
+    @SuppressLint("StaticFieldLeak")
+    private  class ListAsyncTask extends AsyncTask< image, Void, image> {
+
+        @Override
+        protected image doInBackground(image... im) {
+           if(im.length<1)
+            return null;
+
+           String initialUrl = "https://career.webindia123.com";
+                Bitmap mIcon11 = null;
+                try {
+
+                    data_with_link data=getItem(im[0].position);
+
+                    Document doc = Jsoup.connect(data.getUrl()).get();
+                    // String title = doc.title();
+                    //  Elements subcontainer = doc.select("div#subcontainer p");
+                    Elements listCareer = doc.select("div.span_30 td");
+                    //   Elements linkss = listCareer.select("a[href]");
+                    Elements image = listCareer.select("img[src]");                //for image displaying
+                    String urlForImage = image.attr("src");
+
+                    // Elements s=doc.select("div#subcontainer h1");
+                    //  temp.add(new data_with_link('a',s.text(),"head"));
+
+                    InputStream in = new java.net.URL(initialUrl + urlForImage).openStream();
+
+                    mIcon11 = BitmapFactory.decodeStream(in);
+
+                    // publishProgress(mIcon11); // calling progressupdate method
+
+//check here
+                    im[0]= new image(im[0].getPosition(),im[0].getImageView(),mIcon11);
+
+
+                } catch (IOException e) {
+                    Log.i("a", "aa");
+                }
+
+
+
+            return  im[0];
+
+        }
+
+
+        @Override
+        protected void onPostExecute(image data) {
+
+            ImageView imageView=data.getImageView();
+            imageView.setImageBitmap(data.getBitmap());
+            // Clear the adapter of previous earthquake data
+            // mAdapter.clear();
+
+            // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
+            // data set. This will trigger the ListView to update.
+
+
+        }
+    }
+
+
+
+/*
+    @SuppressLint("StaticFieldLeak")
+    private  class ListAsyncTask extends AsyncTask< ArrayList<data_with_link>, Void, ArrayList<data_with_link>> {
+
+
+        @Override
+        protected ArrayList<data_with_link> doInBackground(ArrayList<data_with_link>[] arrayLists) {
+            if (arrayLists.length < 1) {
+                return null;
+            }
+
+
+            String initialUrl = "https://career.webindia123.com";
+            for (int i = 0; i <= arrayLists[0].size(); i++) {
+
+
+                Bitmap mIcon11 = null;
+                try {
+
+                    data_with_link data = arrayLists[0].get(i);
+
+                    Document doc = Jsoup.connect(data.getUrl()).get();
+                    // String title = doc.title();
+                    //  Elements subcontainer = doc.select("div#subcontainer p");
+                    Elements listCareer = doc.select("div.span_30 td");
+                    //   Elements linkss = listCareer.select("a[href]");
+                    Elements image = listCareer.select("img[src]");                //for image displaying
+                    String urlForImage = image.attr("src");
+
+                    // Elements s=doc.select("div#subcontainer h1");
+                    //  temp.add(new data_with_link('a',s.text(),"head"));
+                    data = new data_with_link("ajshd");
+
+                    InputStream in = new java.net.URL(initialUrl + urlForImage).openStream();
+
+                    mIcon11 = BitmapFactory.decodeStream(in);
+
+                   // publishProgress(mIcon11); // calling progressupdate method
+
+//check here
+
+
+                } catch (IOException e) {
+                    Log.i("a", "aa");
+                }
+
+
+            }
+
+
+            return arrayLists[0];
+
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<data_with_link> data) {
+            // Clear the adapter of previous earthquake data
+           // mAdapter.clear();
+
+            // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
+            // data set. This will trigger the ListView to update.
+
+        }
+    }
+
+
+**/
 
 
 }
