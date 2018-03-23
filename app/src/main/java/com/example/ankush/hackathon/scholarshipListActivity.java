@@ -2,31 +2,32 @@ package com.example.ankush.hackathon;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class scholarshipListActivity extends AppCompatActivity {
+public class scholarshipListActivity extends Fragment {
 
     private alphabetAdapter mAdapter;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alphabet_display_list);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
+        View view = inflater.inflate(R.layout.activity_list_view, container, false);
 
-
-        ListView dataListView = (ListView) findViewById(R.id.list);
-        final ArrayList<data_with_link> temp= new ArrayList<>();
+        ListView dataListView = (ListView) view.findViewById(R.id.list);
+        final ArrayList<data_with_link> temp = new ArrayList<>();
         // Create a new adapter that takes an empty list of earthquakes as input
-        mAdapter = new alphabetAdapter(this, new ArrayList<data_with_link>(),"ScholarshipListActivity");
+        mAdapter = new alphabetAdapter(getContext(), new ArrayList<data_with_link>(), "ScholarshipListActivity");
 
         // Set the adapter on the {@link ListView}
         // so the list can be populated in the user interface
@@ -37,7 +38,7 @@ public class scholarshipListActivity extends AppCompatActivity {
         //   ArrayList<data_with_link> a= AlphabetOrderDataExtraction.fetchData(("https://career.webindia123.com/career/options/asp/alpha_listing.asp"));
         // Set an item click listener on the ListView, which sends an intent to a web browser
         // to open a website with more information about the selected earthquake.
-        mAdapter = new alphabetAdapter(this, temp,"ScholarshipListActivity" );
+        mAdapter = new alphabetAdapter(getContext(), temp, "ScholarshipListActivity");
 
 
         dataListView.setAdapter(mAdapter);
@@ -48,26 +49,26 @@ public class scholarshipListActivity extends AppCompatActivity {
                 // Find the current  that was clicked on
                 data_with_link currentdata = mAdapter.getItem(position);
 
-                // Convert the String URL into a URI object (to pass into the Intent constructor)
-                Uri careerListUri = Uri.parse(currentdata.getUrl());
-
                 // Create a new intent to view the earthquake URI
                 //  Intent websiteIntent = new Intent(Intent.ACTION_VIEW, careerListUri);
 
                 // Send the intent to launch a new activity
                 // startActivity(websiteIntent);
 
-                Intent intent = new Intent(getBaseContext(), selectedCareerDetails.class);
-                intent.putExtra("url",currentdata.getUrl());
+                Intent intent = new Intent(getContext(), selectedCareerDetails.class);
+                intent.putExtra("url", currentdata.getUrl());
                 startActivity(intent);
 
             }
         });
+        return view;
     }
 
 
 
-    //assync task
+
+
+        //assync task
 
     @SuppressLint("StaticFieldLeak")
     private  class ListAsyncTask extends AsyncTask<String, Void, ArrayList<data_with_link>> {
