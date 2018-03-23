@@ -65,12 +65,14 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
 
     private Context mContext;
     private View tempView;
+    private String myActivityName;
     private ArrayList<data_with_link> detailsList = new ArrayList<>();
 
-    public alphabetAdapter(@NonNull Context context, @NonNull ArrayList<data_with_link> objects) {
+    public alphabetAdapter(@NonNull Context context, @NonNull ArrayList<data_with_link> objects,String ActivityNAme) {
         super(context,0, objects);
         mContext=context;
         detailsList= objects;
+        myActivityName=ActivityNAme;
     }
 
     private int getMagnitudeColor(char Alphabet) {
@@ -207,37 +209,61 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
 
         tempView= listItem;
 
+        if(myActivityName.equals("AlphabetDisplayList")) {
 
-        if(listItem == null)
-            listItem = LayoutInflater.from(mContext).inflate(R.layout.adapter,parent,false);
-
-
-        ListAsyncTask listAsyncTask= new ListAsyncTask();
-        ImageView imageView =(ImageView)listItem.findViewById(R.id.listImage);
-        image i= new image(position,imageView);
-        listAsyncTask.execute(i);
+            if (listItem == null)
+                listItem = LayoutInflater.from(mContext).inflate(R.layout.adapter, parent, false);
 
 
-        TextView textView1 = (TextView) listItem.findViewById(R.id.letter);
+            ListAsyncTask listAsyncTask = new ListAsyncTask();
+            ImageView imageView = (ImageView) listItem.findViewById(R.id.listImage);
+            image i = new image(position, imageView);
+            listAsyncTask.execute(i);
 
-        TextView textView2 = (TextView) listItem.findViewById(R.id.name);
+            TextView textView2 = (TextView) listItem.findViewById(R.id.name);
 
-        // Display the magnitude of the current earthquake in that TextView
-        String s= null;
-        if (details != null) {
-            s = String.valueOf(details.getAlphabets());
+            // Display the magnitude of the current earthquake in that TextView
+            String s = null;
+            if (details != null) {
+                s = String.valueOf(details.getAlphabets());
 
-        textView1.setText(s);
-        GradientDrawable magnitudeCircle = (GradientDrawable) textView1.getBackground();
+               // textView1.setText(s);
+               // GradientDrawable magnitudeCircle = (GradientDrawable) textView1.getBackground();
 
-        textView2.setText(details.getTitle());
-        // Get the appropriate background color based on the current earthquake magnitude
-        int magnitudeColor = getMagnitudeColor(details.getAlphabets());
+                textView2.setText(details.getTitle());
+                // Get the appropriate background color based on the current earthquake magnitude
+              //  int magnitudeColor = getMagnitudeColor(details.getAlphabets());
 
-        // Set the color on the magnitude circle
-        magnitudeCircle.setColor(magnitudeColor);
+                // Set the color on the magnitude circle
+              //  magnitudeCircle.setColor(magnitudeColor);
+            }
+        }else
+        if(myActivityName.equals("ScholarshipListActivity")) {
+
+            if (listItem == null)
+                listItem = LayoutInflater.from(mContext).inflate(R.layout.scholarship_adapter, parent, false);
+
+            TextView textView1 = (TextView) listItem.findViewById(R.id.scholar_letter);
+
+            TextView textView2 = (TextView) listItem.findViewById(R.id.scholar_title);
+            String s = null;
+            if (details != null) {
+                s = String.valueOf(details.getAlphabets());
+
+                textView1.setText(s);
+                GradientDrawable magnitudeCircle = (GradientDrawable) textView1.getBackground();
+
+                textView2.setText(details.getTitle());
+                // Get the appropriate background color based on the current earthquake magnitude
+                int magnitudeColor = getMagnitudeColor(details.getAlphabets());
+
+                // Set the color on the magnitude circle
+                magnitudeCircle.setColor(magnitudeColor);
+            }
+
         }
-        return listItem;
+
+            return listItem;
 
 
     }
