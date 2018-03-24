@@ -97,7 +97,6 @@ public class firstPage extends AppCompatActivity  implements NavigationView.OnNa
 
         } else if (id == R.id.scholarship) {
 
-
             Intent intent= new Intent(this,scholoarshipTabbedActivity.class);
             startActivity(intent);
 
