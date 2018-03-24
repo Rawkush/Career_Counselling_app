@@ -122,8 +122,9 @@ public class scholoarshipTabbedActivity extends AppCompatActivity  implements Na
 
     private void setupViewPager(ViewPager viewPager){
        // selectionPageAdapter adapter= new selectionPageAdapter(getSupportFragmentManager());
-        mySelectionPageAdapter.addFreagment(new scholarshipListActivity(),"Scholoarship List");
         mySelectionPageAdapter.addFreagment(new scholarshipByOrder(),"scholarship order");
+
+        mySelectionPageAdapter.addFreagment(new scholarshipListActivity(),"List");
         viewPager.setAdapter(mySelectionPageAdapter);
     }
 

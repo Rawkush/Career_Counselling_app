@@ -1,6 +1,8 @@
 package com.example.ankush.hackathon;
 
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,9 +15,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -30,18 +37,21 @@ import java.util.ArrayList;
  * Created by Ankush on 3/23/2018.
  */
 
-public class scholarshipByOrder extends Fragment implements View.OnClickListener {
+public class scholarshipByOrder extends Fragment  {
 
     private Button button1,button2,button3,button4;
     private LinearLayout linearLayout;
     private String container=null;
-    private String url="https://scholarships.gov.in";
-    private ListAsyncTask listAsyncTask=new ListAsyncTask();
+    private String url="https://scholarships.gov.in/";
+    private WebView webView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.scholarship_by_order,container,false);
 
+        webView=view.findViewById(R.id.webview);
+
+/*
         button1=(Button) view.findViewById(R.id.central_scheme);
         button1.setOnClickListener(this);
         button2=(Button) view.findViewById(R.id.ugc_scheme);
@@ -50,11 +60,35 @@ public class scholarshipByOrder extends Fragment implements View.OnClickListener
         button3.setOnClickListener(this);
         button4=(Button) view.findViewById(R.id.state_scheme);
         button4.setOnClickListener(this);
+*/
 
+    //    webView.getSettings().setJavaScriptEnabled(true); // enable javascript
+
+        final Activity activity = getActivity();
+
+        webView.setWebViewClient(new WebViewClient() {
+            @SuppressWarnings("deprecation")
+            @Override
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                Toast.makeText(activity, description, Toast.LENGTH_SHORT).show();
+            }
+            @TargetApi(android.os.Build.VERSION_CODES.M)
+            @Override
+            public void onReceivedError(WebView view, WebResourceRequest req, WebResourceError rerr) {
+                // Redirect to deprecated method, so you can use it in all SDK versions
+                onReceivedError(view, rerr.getErrorCode(), rerr.getDescription().toString(), req.getUrl().toString());
+            }
+        });
+
+
+
+        webView.loadUrl("https://scholarships.gov.in/");
         return view;
     }
 
 
+    /**
+/*
     @Override
     public void onClick(View view) {
 
@@ -63,28 +97,33 @@ public class scholarshipByOrder extends Fragment implements View.OnClickListener
 
             case R.id.central_scheme:
 
-                container="div#CentralSchemes.w3-container w3-border scheme tr";
+                container="div#CentralSchemes.w3-container.w3-border.scheme tr";
+                listAsyncTask.cancel(true);
                 listAsyncTask.execute(container);
                 // code for button when user clicks buttonOne.
                 break;
 
             case R.id.ugc_scheme:
 
-                container="div#CentralSchemes.w3-container w3-border scheme tr";
+                container="div#CentralSchemes.w3-container.w3-border.scheme tr";
+                listAsyncTask.cancel(true);
+
                 listAsyncTask.execute(container);
                 // do your code
                 break;
 
             case R.id.aicte_scheme:
+                listAsyncTask.cancel(true);
 
-                container="div#CentralSchemes.w3-container w3-border scheme tr";
+                container="div#CentralSchemes.w3-container.w3-border.scheme tr";
                 listAsyncTask.execute(container);
                 // do your code
                 break;
 
             case R.id.state_scheme:
+                listAsyncTask.cancel(true);
 
-                container="div#CentralSchemes.w3-container w3-border scheme tr";
+                container="div#CentralSchemes.w3-container.w3-border.scheme tr";
                 listAsyncTask.execute(container);
                 // do your code
                 break;
@@ -109,13 +148,15 @@ public class scholarshipByOrder extends Fragment implements View.OnClickListener
             }
 
             ArrayList<data_with_link> temp = new ArrayList<>();
-            String initialUrl = "https://career.webindia123.com";
+            //String initialUrl = "https://career.webindia123.com";
 
             try {
 
 
                 Document doc = Jsoup.connect(url).get();
                 // String title = doc.title();
+
+                Log.i("no error","jsoup extracting");
                 // selecting all td rows of the container
                 Elements subcontainer = doc.select(container[0]);
                 Elements listCareer = doc.select("div.span_30 td");
@@ -132,6 +173,7 @@ public class scholarshipByOrder extends Fragment implements View.OnClickListener
 
             } catch (IOException e) {
                 Log.i("a","aa");
+
             }
 
 
@@ -145,7 +187,7 @@ public class scholarshipByOrder extends Fragment implements View.OnClickListener
 
                     imageView.setImageBitmap(bitmap);
                 }
-        */
+
         @Override
         protected void onPostExecute(ArrayList<data_with_link> data) {
             // Clear the adapter of previous earthquake data
@@ -161,6 +203,6 @@ public class scholarshipByOrder extends Fragment implements View.OnClickListener
 
 
     }
-
+**/
 
 }
