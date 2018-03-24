@@ -27,7 +27,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".scholarshipListActivity"></activity>
+
+        <activity
+            android:name=".scholoarshipTabbedActivity"
+            android:label="@string/title_activity_scholoarship_tabbed"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>

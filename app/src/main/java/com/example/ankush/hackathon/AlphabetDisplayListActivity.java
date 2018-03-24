@@ -2,27 +2,17 @@ package com.example.ankush.hackathon;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class AlphabetDisplayListActivity extends Fragment {
 private alphabetAdapter mAdapter;
@@ -31,8 +21,8 @@ private alphabetAdapter mAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-     View view=   inflater.inflate(R.layout.activity_alphabet_display_list, container,false);
-    // setContentView(R.layout.activity_alphabet_display_list);
+     View view=   inflater.inflate(R.layout.activity_list_view, container,false);
+    // setContentView(R.layout.activity_list_view);
       // LayoutInflater.inflate(R.layout.tab2, , false);
         // Find a reference to the {@link ListView} in the layout
 
