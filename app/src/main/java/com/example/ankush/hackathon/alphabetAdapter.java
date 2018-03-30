@@ -29,7 +29,7 @@ import java.util.List;
 
 
 /**
- * Created by Ankush on 3/11/2018.
+ * Created by Ankush
  */
 
 public class alphabetAdapter extends ArrayAdapter<data_with_link> {
@@ -395,10 +395,10 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
 
         @Override
         protected void onPostExecute(ArrayList<data_with_link> data) {
-            // Clear the adapter of previous earthquake data
+            // Clear the adapter of previous data
            // mAdapter.clear();
 
-            // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
+            // If there is a valid list of, then add them to the adapter's
             // data set. This will trigger the ListView to update.
 
         }
