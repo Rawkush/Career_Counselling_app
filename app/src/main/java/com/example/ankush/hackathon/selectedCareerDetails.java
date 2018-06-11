@@ -128,7 +128,7 @@ private    TextView header;
 */
         @Override
         protected void onPostExecute(ArrayList<data_with_link> data) {
-            // Clear the adapter of previous earthquake data
+            // Clear the adapter of previous data
 
             for(int i=0; i<data.size()  ;i++){
 //check here

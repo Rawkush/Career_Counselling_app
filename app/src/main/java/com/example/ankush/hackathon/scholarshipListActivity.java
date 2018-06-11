@@ -26,7 +26,7 @@ public class scholarshipListActivity extends Fragment {
 
         ListView dataListView = (ListView) view.findViewById(R.id.list);
         final ArrayList<data_with_link> temp = new ArrayList<>();
-        // Create a new adapter that takes an empty list of earthquakes as input
+        // Create a new adapter that takes an empty list of as input
         mAdapter = new alphabetAdapter(getContext(), new ArrayList<data_with_link>(), "ScholarshipListActivity");
 
         // Set the adapter on the {@link ListView}
@@ -37,7 +37,7 @@ public class scholarshipListActivity extends Fragment {
 
         //   ArrayList<data_with_link> a= AlphabetOrderDataExtraction.fetchData(("https://career.webindia123.com/career/options/asp/alpha_listing.asp"));
         // Set an item click listener on the ListView, which sends an intent to a web browser
-        // to open a website with more information about the selected earthquake.
+        // to open a website with more information about the selected .
         mAdapter = new alphabetAdapter(getContext(), temp, "ScholarshipListActivity");
 
 
@@ -49,7 +49,7 @@ public class scholarshipListActivity extends Fragment {
                 // Find the current  that was clicked on
                 data_with_link currentdata = mAdapter.getItem(position);
 
-                // Create a new intent to view the earthquake URI
+                // Create a new intent to view the  URI
                 //  Intent websiteIntent = new Intent(Intent.ACTION_VIEW, careerListUri);
 
                 // Send the intent to launch a new activity
@@ -85,11 +85,9 @@ public class scholarshipListActivity extends Fragment {
 
         @Override
         protected void onPostExecute(ArrayList<data_with_link> data) {
-            // Clear the adapter of previous earthquake data
+            // Clear the adapter of previous  data
             mAdapter.clear();
 
-            // If there is a valid list of {@link Earthquake}s, then add them to the adapter's
-            // data set. This will trigger the ListView to update.
             if (data != null && !data.isEmpty()) {
                 mAdapter.addAll(data);
             }

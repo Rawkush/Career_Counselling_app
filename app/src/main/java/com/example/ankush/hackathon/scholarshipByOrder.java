@@ -37,21 +37,26 @@ import java.util.ArrayList;
  * Created by Ankush on 3/23/2018.
  */
 
-public class scholarshipByOrder extends Fragment  {
+public class scholarshipByOrder extends Fragment implements View.OnClickListener {
 
     private Button button1,button2,button3,button4;
     private LinearLayout linearLayout;
     private String container=null;
     private String url="https://scholarships.gov.in/";
     private WebView webView;
+
+    private ListAsyncTask listAsyncTask=new ListAsyncTask();
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.scholarship_by_order,container,false);
 
-        webView=view.findViewById(R.id.webview);
+//        webView=view.findViewById(R.id.webview);
 
-/*
+
+
+
         button1=(Button) view.findViewById(R.id.central_scheme);
         button1.setOnClickListener(this);
         button2=(Button) view.findViewById(R.id.ugc_scheme);
@@ -60,10 +65,12 @@ public class scholarshipByOrder extends Fragment  {
         button3.setOnClickListener(this);
         button4=(Button) view.findViewById(R.id.state_scheme);
         button4.setOnClickListener(this);
-*/
 
-    //    webView.getSettings().setJavaScriptEnabled(true); // enable javascript
 
+        //    webView.getSettings().setJavaScriptEnabled(true); // enable javascript
+
+ /*
+ // for webview
         final Activity activity = getActivity();
 
         webView.setWebViewClient(new WebViewClient() {
@@ -83,126 +90,127 @@ public class scholarshipByOrder extends Fragment  {
 
 
         webView.loadUrl("https://scholarships.gov.in/");
+        //end of webView
+*/
         return view;
     }
 
 
-    /**
-/*
-    @Override
-    public void onClick(View view) {
+
+     @Override
+     public void onClick(View view) {
 
 
-        switch (view.getId()) {
+     switch (view.getId()) {
 
-            case R.id.central_scheme:
+     case R.id.central_scheme:
 
-                container="div#CentralSchemes.w3-container.w3-border.scheme tr";
-                listAsyncTask.cancel(true);
-                listAsyncTask.execute(container);
-                // code for button when user clicks buttonOne.
-                break;
+     container="div#CentralSchemes.w3-container.w3-border.scheme tr";
+     listAsyncTask.cancel(true);
+     listAsyncTask.execute(container);
+     // code for button when user clicks buttonOne.
 
-            case R.id.ugc_scheme:
+     break;
 
-                container="div#CentralSchemes.w3-container.w3-border.scheme tr";
-                listAsyncTask.cancel(true);
+     case R.id.ugc_scheme:
 
-                listAsyncTask.execute(container);
-                // do your code
-                break;
+     container="div#CentralSchemes.w3-container.w3-border.scheme tr";
+     listAsyncTask.cancel(true);
 
-            case R.id.aicte_scheme:
-                listAsyncTask.cancel(true);
+     listAsyncTask.execute(container);
+     // do your code
+     break;
 
-                container="div#CentralSchemes.w3-container.w3-border.scheme tr";
-                listAsyncTask.execute(container);
-                // do your code
-                break;
+     case R.id.aicte_scheme:
+     listAsyncTask.cancel(true);
 
-            case R.id.state_scheme:
-                listAsyncTask.cancel(true);
+     container="div#CentralSchemes.w3-container.w3-border.scheme tr";
+     listAsyncTask.execute(container);
+     // do your code
+     break;
 
-                container="div#CentralSchemes.w3-container.w3-border.scheme tr";
-                listAsyncTask.execute(container);
-                // do your code
-                break;
-            default:
-                break;
-        }
+     case R.id.state_scheme:
+     listAsyncTask.cancel(true);
 
-    }
+     container="div#CentralSchemes.w3-container.w3-border.scheme tr";
+     listAsyncTask.execute(container);
+     // do your code
+     break;
+     default:
+     break;
+     }
 
-
-    @SuppressLint("StaticFieldLeak")
-    private  class ListAsyncTask extends AsyncTask<String, Void, ArrayList<data_with_link>> {
+     }
 
 
 
+     //ASYNC TASK
 
-        @Override
-        protected ArrayList<data_with_link> doInBackground(String... container) {
-            // Don't perform the request if there are no URLs, or the first URL is null.
-            if (container.length < 1 || container[0] == null) {
-                return null;
-            }
+     @SuppressLint("StaticFieldLeak")
+     private  class ListAsyncTask extends AsyncTask<String, Void, ArrayList<data_with_link>> {
 
-            ArrayList<data_with_link> temp = new ArrayList<>();
-            //String initialUrl = "https://career.webindia123.com";
+     @Override
+     protected ArrayList<data_with_link> doInBackground(String... container) {
+     // Don't perform the request if there is container is empty, or null.
+     if (container.length < 1 || container[0] == null) {
+     return null;
+     }
 
-            try {
+     ArrayList<data_with_link> temp = new ArrayList<>();
+     //String initialUrl = "https://career.webindia123.com";
 
+     try {
 
-                Document doc = Jsoup.connect(url).get();
-                // String title = doc.title();
+     Document doc = Jsoup.connect(url).get();
+     // String title = doc.title();
 
-                Log.i("no error","jsoup extracting");
-                // selecting all td rows of the container
-                Elements subcontainer = doc.select(container[0]);
-                Elements listCareer = doc.select("div.span_30 td");
-                Elements linkss = listCareer.select("a[href]");
-                Elements header=subcontainer.select("header.type-2");
-                int i=0;
-                for (Element link : subcontainer) {
-                    //copiyng 4 url options available
+     Log.i("no error","jsoup extracting");
+     // selecting all td rows of the container
+     Elements subcontainer = doc.select(container[0]);
+     Elements listCareer = doc.select("div.span_30 td");
+     Elements linkss = listCareer.select("a[href]");
+     Elements header=subcontainer.select("header.type-2");
+     int i=0;
+     for (Element link : subcontainer) {
+     //copiyng 4 url options available
 
-                   // temp.add(new data_with_link(link.text().charAt(0),link.text(), initialUrl + link.attr("href")));
-                    Log.i("lol; ",link.attr("href"));
+     // temp.add(new data_with_link(link.text().charAt(0),link.text(), initialUrl + link.attr("href")));
+     Log.i("lol; ",link.attr("href"));
 
-                }
+     }
 
-            } catch (IOException e) {
-                Log.i("a","aa");
+     } catch (IOException e) {
+     Log.i("a","aa");
 
-            }
-
-
-
-            return temp;
-
-
-        }
-        /*
-                 void publishProgress(Bitmap bitmap) {
-
-                    imageView.setImageBitmap(bitmap);
-                }
-
-        @Override
-        protected void onPostExecute(ArrayList<data_with_link> data) {
-            // Clear the adapter of previous earthquake data
+     }
 
 
+
+     return temp;
+
+
+     }
+     /*
+     void publishProgress(Bitmap bitmap) {
+
+     imageView.setImageBitmap(bitmap);
+     }
+*/
+     @Override
+     protected void onPostExecute(ArrayList<data_with_link> data) {
+     // Clear the adapter of previous data
 
 
 
 
 
-        }
+
+
+     }
 
 
 
-    }
-**/
+     }
+
 
 }
