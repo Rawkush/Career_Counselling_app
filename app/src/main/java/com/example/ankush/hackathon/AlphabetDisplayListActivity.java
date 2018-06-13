@@ -29,20 +29,12 @@ public class AlphabetDisplayListActivity extends Fragment {
 private alphabetAdapter mAdapter;
 private ProgressDialog mProgress;
 
-    private ProgressDialog mProgress;
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
      View view=   inflater.inflate(R.layout.activity_list_view, container,false);
-<<<<<<< HEAD
     // setContentView(R.layout.activity_alphabet_display_list);
-=======
-
-     mProgress=new ProgressDialog(getContext());
-    // setContentView(R.layout.activity_list_view);
->>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
       // LayoutInflater.inflate(R.layout.tab2, , false);
 
         ListView dataListView = (ListView) view.findViewById(R.id.list);
@@ -60,11 +52,6 @@ private ProgressDialog mProgress;
         task.execute("https://career.webindia123.com/career/options/asp/alpha_listing.asp");
 
      //   ArrayList<data_with_link> a= AlphabetOrderDataExtraction.fetchData(("https://career.webindia123.com/career/options/asp/alpha_listing.asp"));
-<<<<<<< HEAD
-=======
-        // Set an item click listener on the ListView, which sends an intent to a web browser
-        // to open a website with more information about the selected .
->>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
         mAdapter = new alphabetAdapter(getContext(), temp,"AlphabetDisplayList" );
 
 
@@ -120,15 +107,10 @@ private ProgressDialog mProgress;
             super.onPreExecute();
             mProgress.setMessage("Loading...");
             mProgress.show();
-<<<<<<< HEAD
-=======
-
->>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
         }
 
         @Override
         protected void onPostExecute(ArrayList<data_with_link> data) {
-<<<<<<< HEAD
 
             mProgress.dismiss();
 
@@ -136,16 +118,6 @@ private ProgressDialog mProgress;
             mAdapter.clear();
 
             // If there is a valid list then add them to the adapter's
-=======
-            // Clear the adapter of previous  data
-            mAdapter.clear();
-
-            //loading removing
-
-            mProgress.dismiss();
-
-            // If there is a valid list of s, then add them to the adapter's
->>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
             // data set. This will trigger the ListView to update.
             if (data != null && !data.isEmpty()) {
                 mAdapter.addAll(data);

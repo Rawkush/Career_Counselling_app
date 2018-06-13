@@ -5,11 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-<<<<<<< HEAD
     tools:context="com.example.ankush.hackathon.Mainpage"
-=======
-    tools:context="com.example.ankush.hackathon.explore"
->>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
     tools:showIn="@layout/app_bar_first_page">
 
     <android.support.v4.view.ViewPager
