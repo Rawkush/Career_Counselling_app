@@ -1,7 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+<<<<<<< HEAD
     tools:context="com.example.ankush.hackathon.Mainpage">
+=======
+    tools:context="com.example.ankush.hackathon.explore">
+>>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"

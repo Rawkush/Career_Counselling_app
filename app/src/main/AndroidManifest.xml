@@ -3,7 +3,6 @@
     package="com.example.ankush.hackathon">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +16,14 @@
             android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="false" />
 
+<<<<<<< HEAD
         <activity android:name=".WelcomeActivity">
+=======
+        <activity
+            android:name=".explore"
+            android:label="@string/title_activity_first_page"
+            android:theme="@style/AppTheme.NoActionBar">
+>>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

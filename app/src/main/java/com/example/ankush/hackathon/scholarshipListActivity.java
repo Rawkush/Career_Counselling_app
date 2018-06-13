@@ -28,7 +28,11 @@ public class scholarshipListActivity extends Fragment {
 
         ListView dataListView = (ListView) view.findViewById(R.id.list);
         final ArrayList<data_with_link> temp = new ArrayList<>();
+<<<<<<< HEAD
         // Create a new adapter that takes an empty list os input
+=======
+        // Create a new adapter that takes an empty list of as input
+>>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
         mAdapter = new alphabetAdapter(getContext(), new ArrayList<data_with_link>(), "ScholarshipListActivity");
         mProgress=new ProgressDialog(getContext());
 
@@ -39,7 +43,11 @@ public class scholarshipListActivity extends Fragment {
 
         //   ArrayList<data_with_link> a= AlphabetOrderDataExtraction.fetchData(("https://career.webindia123.com/career/options/asp/alpha_listing.asp"));
         // Set an item click listener on the ListView, which sends an intent to a web browser
+<<<<<<< HEAD
         // to open a website with more information about the selected e.
+=======
+        // to open a website with more information about the selected .
+>>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
         mAdapter = new alphabetAdapter(getContext(), temp, "ScholarshipListActivity");
 
 
@@ -51,7 +59,11 @@ public class scholarshipListActivity extends Fragment {
                 // Find the current  that was clicked on
                 data_with_link currentdata = mAdapter.getItem(position);
 
+<<<<<<< HEAD
                 // Create a new intent to view the e URI
+=======
+                // Create a new intent to view the  URI
+>>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
                 //  Intent websiteIntent = new Intent(Intent.ACTION_VIEW, careerListUri);
 
                 // Send the intent to launch a new activity
@@ -94,6 +106,7 @@ public class scholarshipListActivity extends Fragment {
 
         @Override
         protected void onPostExecute(ArrayList<data_with_link> data) {
+<<<<<<< HEAD
 
             mProgress.dismiss();
 
@@ -102,6 +115,11 @@ public class scholarshipListActivity extends Fragment {
 
             // If there is a valid list of , then add them to the adapter's
             // data set. This will trigger the ListView to update.
+=======
+            // Clear the adapter of previous  data
+            mAdapter.clear();
+
+>>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
             if (data != null && !data.isEmpty()) {
                 mAdapter.addAll(data);
             }

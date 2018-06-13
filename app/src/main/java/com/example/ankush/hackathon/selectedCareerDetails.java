@@ -138,9 +138,12 @@ private ProgressDialog mProgress;
 */
         @Override
         protected void onPostExecute(ArrayList<data_with_link> data) {
+<<<<<<< HEAD
 
             mProgress.dismiss();
 
+=======
+>>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
             // Clear the adapter of previous data
 
             for(int i=0; i<data.size()  ;i++){

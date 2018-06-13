@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context="com.example.ankush.hackathon.Mainpage">
+=======
+    tools:context="com.example.ankush.hackathon.explore">
+>>>>>>> b54e06ff9243e0cd9cb0faffdedf4cf426867929
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
