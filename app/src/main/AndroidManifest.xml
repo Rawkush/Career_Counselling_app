@@ -17,23 +17,42 @@
             android:name="android.webkit.WebView.EnableSafeBrowsing"
             android:value="false" />
 
-        <activity
-            android:name=".firstPage"
-            android:label="@string/title_activity_first_page"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".loginpage" />
+        <activity android:name=".SignUp" />
+        <activity
+            android:name=".Mainpage"
+            android:label="@string/title_activity_first_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".sciencecourses" />
+        <activity android:name=".AboutusActivity" />
         <activity
             android:name=".scholoarshipTabbedActivity"
-            android:label="@string/title_activity_scholoarship_tabbed"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="Scholarship"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".signuppage" />
+        <activity android:name=".Signin" />
+        <activity android:name=".ResetPassword" />
+        <activity android:name=".Class10" />
+        <activity android:name=".Class10streams" />
+        <activity android:name=".tendiploma" />
+        <activity android:name=".tenscholarships" />
+        <activity android:name=".tenshort" />
+        <activity android:name=".Jobs" />
+        <activity android:name=".Indiannavy" />
+        <activity android:name=".coursexplation" />
+        <activity android:name=".polytechnique" />
+        <activity android:name=".Class12" />
+        <activity android:name=".ClassUg" />
+        <activity android:name=".ClassPg" />
+        <activity android:name=".ITI" />
 
-        </activity>
     </application>
 
 </manifest>

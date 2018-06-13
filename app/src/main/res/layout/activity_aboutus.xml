@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context="com.example.ankush.hackathon.AboutusActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+            android:textSize="25sp"
+            android:textColor="#ffffff"
+            android:id="@+id/toolbar_title" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:elevation="4dp"
+        android:layout_marginTop="10dp"
+        android:padding="16dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/man"
+            android:id="@+id/card1image"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="18dp"/>
+ 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card1titlename"
+            android:layout_toRightOf="@id/card1image"
+            android:text="Deepak Maurya"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card1titlework"
+            android:layout_toRightOf="@id/card1image"
+            android:layout_below="@id/card1titlename"
+            android:text="Developer"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card1titleEmailId"
+            android:layout_toRightOf="@id/card1image"
+            android:layout_below="@id/card1titlework"
+            android:text="deepak@gmail.com"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card1titlefbId"
+            android:layout_toRightOf="@id/card1image"
+            android:layout_below="@id/card1titleEmailId"
+            android:text="www.fb.com/deepak.maurya"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+      
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/man"
+            android:id="@+id/card2image"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card2titlename"
+            android:layout_toRightOf="@id/card2image"
+            android:text="Avnish"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card2titlework"
+            android:layout_toRightOf="@id/card2image"
+            android:layout_below="@id/card2titlename"
+            android:text="Developer"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card2titleEmailId"
+            android:layout_toRightOf="@id/card2image"
+            android:layout_below="@id/card2titlework"
+            android:text="Avnish@gmail.com"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card2titlefbId"
+            android:layout_toRightOf="@id/card2image"
+            android:layout_below="@id/card2titleEmailId"
+            android:text="www.fb.com/deepak.maurya"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/man"
+            android:id="@+id/card3image"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card3titlename"
+            android:layout_toRightOf="@id/card3image"
+            android:text="Ankush Rawat"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card3titlework"
+            android:layout_toRightOf="@id/card3image"
+            android:layout_below="@id/card3titlename"
+            android:text="Developer"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card3titleEmailId"
+            android:layout_toRightOf="@id/card3image"
+            android:layout_below="@id/card3titlework"
+            android:text="ankush@gmail.com"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card3titlefbId"
+            android:layout_toRightOf="@id/card3image"
+            android:layout_below="@id/card3titleEmailId"
+            android:text="www.fb.com/ankush"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/man"
+            android:id="@+id/card4image"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card4titlename"
+            android:layout_toRightOf="@id/card4image"
+            android:text="Rahul Prajapati"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card4titlework"
+            android:layout_toRightOf="@id/card4image"
+            android:layout_below="@id/card4titlename"
+            android:text="Developer"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card4titleEmailId"
+            android:layout_toRightOf="@id/card4image"
+            android:layout_below="@id/card4titlework"
+            android:text="rahul@gmail.com"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card4titlefbId"
+            android:layout_toRightOf="@id/card4image"
+            android:layout_below="@id/card4titleEmailId"
+            android:text="www.fb.com/rahul"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/man"
+            android:id="@+id/card5image"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card5titlename"
+            android:layout_toRightOf="@id/card5image"
+            android:text="Aditya Sharma"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card5titlework"
+            android:layout_toRightOf="@id/card5image"
+            android:layout_below="@id/card5titlename"
+            android:text="Developer"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card5titleEmailId"
+            android:layout_toRightOf="@id/card5image"
+            android:layout_below="@id/card5titlework"
+            android:text="aditya@gmail.com"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card5titlefbId"
+            android:layout_toRightOf="@id/card5image"
+            android:layout_below="@id/card5titleEmailId"
+            android:text="www.fb.com/aditya"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#fff"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/man"
+            android:id="@+id/card6image"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card6titlename"
+            android:layout_toRightOf="@id/card6image"
+            android:text="Jeetin kumar anand"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card6titlework"
+            android:layout_toRightOf="@id/card6image"
+            android:layout_below="@id/card6titlename"
+            android:text="Developer"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card6titleEmailId"
+            android:layout_toRightOf="@id/card6image"
+            android:layout_below="@id/card6titlework"
+            android:text="kumaranand@gmail.com"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/card6titlefbId"
+            android:layout_toRightOf="@id/card6image"
+            android:layout_below="@id/card6titleEmailId"
+            android:text="www.fb.com/jeetin"
+            android:paddingBottom="5dp"
+            android:textSize="18dp"/>
+
+
+    </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

@@ -1,0 +1,231 @@
+{
+  "project_info": {
+    "project_number": "102328743809",
+    "firebase_url": "https://firstfire-1e92f.firebaseio.com",
+    "project_id": "firstfire-1e92f",
+    "storage_bucket": "firstfire-1e92f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102328743809:android:6bd8041368f77efa",
+        "android_client_info": {
+          "package_name": "com.example.ankush.hackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102328743809-olj9innousnuhtakjthh2daabg6d9406.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ankush.hackathon",
+            "certificate_hash": "693ba08fcf4aa9c0c83d438dcc7d29c14a536907"
+          }
+        },
+        {
+          "client_id": "102328743809-tb8ishjnl5di0pm0g88nkdu730d9k0qc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD140ss5ysgeMaxwcCvEsrNjtkWcFdROPk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102328743809-tb8ishjnl5di0pm0g88nkdu730d9k0qc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102328743809:android:cfababc9e604326f",
+        "android_client_info": {
+          "package_name": "com.themakers.adi.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102328743809-hvvd1o80e96qa7sk3trdsfiesmpb881v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.themakers.adi.firebase",
+            "certificate_hash": "5ba34a864119a4b61f41ea90e85292fcae4d0e51"
+          }
+        },
+        {
+          "client_id": "102328743809-tb8ishjnl5di0pm0g88nkdu730d9k0qc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD140ss5ysgeMaxwcCvEsrNjtkWcFdROPk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102328743809-tb8ishjnl5di0pm0g88nkdu730d9k0qc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102328743809:android:c7f08cd86999eb37",
+        "android_client_info": {
+          "package_name": "com.themakers.adi.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102328743809-l46vjefdkn2vt85ifgod6td8q5p6csod.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.themakers.adi.login",
+            "certificate_hash": "5ba34a864119a4b61f41ea90e85292fcae4d0e51"
+          }
+        },
+        {
+          "client_id": "102328743809-tb8ishjnl5di0pm0g88nkdu730d9k0qc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD140ss5ysgeMaxwcCvEsrNjtkWcFdROPk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102328743809-tb8ishjnl5di0pm0g88nkdu730d9k0qc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102328743809:android:2e2e3e6927af6844",
+        "android_client_info": {
+          "package_name": "com.themakers.adi.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102328743809-4qn8isvl49dfgrn15je9079al1mab93l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.themakers.adi.myapplication",
+            "certificate_hash": "5ba34a864119a4b61f41ea90e85292fcae4d0e51"
+          }
+        },
+        {
+          "client_id": "102328743809-tb8ishjnl5di0pm0g88nkdu730d9k0qc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD140ss5ysgeMaxwcCvEsrNjtkWcFdROPk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102328743809-tb8ishjnl5di0pm0g88nkdu730d9k0qc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102328743809:android:458bb55a08ba87ae",
+        "android_client_info": {
+          "package_name": "com.themakers.adi.signup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102328743809-t1r8rf9ivnnqc90r3hkui54bm3j8tvke.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.themakers.adi.signup",
+            "certificate_hash": "5ba34a864119a4b61f41ea90e85292fcae4d0e51"
+          }
+        },
+        {
+          "client_id": "102328743809-tb8ishjnl5di0pm0g88nkdu730d9k0qc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD140ss5ysgeMaxwcCvEsrNjtkWcFdROPk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102328743809-tb8ishjnl5di0pm0g88nkdu730d9k0qc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

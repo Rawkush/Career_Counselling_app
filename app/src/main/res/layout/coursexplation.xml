@@ -1,0 +1,102 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context="com.example.ankush.hackathon.AboutusActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course Details"
+                android:textSize="25sp"
+                android:textColor="#ffffff"
+                android:id="@+id/toolbar_title" />
+
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Introduction"
+            android:textStyle=""
+            android:textSize="30sp"
+            android:layout_marginLeft="10sp"
+            android:textColor="#000000"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/layout_bg"
+            android:elevation="4dp"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:layout_height="wrap_content">
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/introtext"
+                android:layout_toRightOf="@id/card1image"
+                android:text="Class 10"
+                android:textStyle="bold"
+                android:textColor="#efb516"
+                android:gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="48dp"
+                android:textSize="30dp"
+                android:paddingBottom="5dp"
+                />
+
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scope"
+
+            android:textStyle=""
+            android:fontFamily="@string/tab_text_1"
+            android:textSize="30sp"
+            android:layout_marginLeft="10sp"
+            android:textColor="#000000"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/layout_bg"
+            android:elevation="4dp"
+            android:padding="16dp">
+
+
+
+            <TextView
+                android:id="@+id/scopetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="48dp"
+                android:textSize="30dp"
+                android:text="Class 12"
+                android:textColor="#efb516"
+                android:textStyle="bold" />
+
+
+
+        </RelativeLayout>
+
+</LinearLayout>
+</ScrollView>

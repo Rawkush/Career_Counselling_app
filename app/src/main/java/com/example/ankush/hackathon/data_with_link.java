@@ -2,9 +2,7 @@ package com.example.ankush.hackathon;
 
 import android.graphics.Bitmap;
 
-/**
- * Created by Ankush on 3/11/2018.
- */
+
 
 public class data_with_link {
 

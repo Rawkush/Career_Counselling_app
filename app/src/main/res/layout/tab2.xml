@@ -1,21 +1,179 @@
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
+    android:layout_height="match_parent"
+    tools:context="com.example.ankush.hackathon.AboutusActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#fff"
+            android:elevation="4dp"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="140sp"
+                android:layout_height="140sp"
+                android:src="@drawable/blackboard"
+                android:id="@+id/card1image"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="18dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/card1titlename"
+                android:layout_toRightOf="@id/card1image"
+                android:text="Class 10"
+                android:textStyle="bold"
+                android:textColor="#efb516"
+                android:gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="48dp"
+                android:textSize="30dp"
+                android:paddingBottom="5dp"
+               />
+                android:background="#e7d5d5">
+            <Button
+                android:id="@+id/card1"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:background="@drawable/button_bg_transparent"
+                android:text="Explore Courses"
+                android:clickable="true"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#fff"
+            android:elevation="4dp"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/card2image"
+                android:layout_width="140sp"
+                android:layout_height="140sp"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="18dp"
+                android:src="@drawable/class12" />
+
+            <TextView
+                android:id="@+id/card2titlename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_toRightOf="@id/card2image"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="48dp"
+                android:textSize="30dp"
+                android:text="Class 12"
+                android:textColor="#efb516"
+
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:background="@drawable/button_bg_transparent"
+                android:text="Explore Courses"
+                android:clickable="true"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#fff"
+            android:elevation="4dp"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="140sp"
+                android:layout_height="140sp"
+                android:src="@drawable/graduation"
+                android:id="@+id/card3image"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="18dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/card3titlename"
+                android:layout_marginTop="48dp"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:textColor="#efb516"
+                android:layout_toRightOf="@id/card3image"
+                android:text="UnderGraduation"
+                android:paddingBottom="5dp"
+               />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Explore courses"
+                android:id="@+id/card3"
+                android:background="@drawable/button_bg_transparent"
+                android:layout_marginTop="150dp"
+                android:clickable="true"
+
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="#fff"
+            android:elevation="4dp"
+            android:layout_marginTop="10dp"
+            android:padding="16dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="140sp"
+                android:layout_height="140sp"
+                android:src="@drawable/blackboard"
+                android:id="@+id/card4image"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="18dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/card4titlename"
+                android:layout_marginTop="48dp"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="#efb516"
+                android:layout_toRightOf="@id/card4image"
+                android:text="PostGraduation"
+                android:paddingBottom="5dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Explore Courses"
+                android:id="@+id/card4"
+                android:background="@drawable/button_bg_transparent"
+                android:layout_marginTop="150dp"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>
