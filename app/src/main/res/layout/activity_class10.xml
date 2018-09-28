@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.ankush.hackathon.Class10">
+ <android.support.v7.widget.Toolbar
+     android:id="@+id/toolbar"
+     android:layout_width="match_parent"
+     android:layout_height="?attr/actionBarSize"
+     android:background="@color/colorPrimary"
+     app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Matriculation"
+      android:textSize="25sp"
+      android:textColor="#ffffff"
+      android:id="@+id/toolbar_title" />
+
+ </android.support.v7.widget.Toolbar>
+ <TextView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="Select Your Choice"
+     android:layout_marginTop="10sp"
+     android:textSize="30dp"
+     android:textColor="#efb516"
+     android:textStyle="bold"
+   android:gravity="center"
+     android:id="@+id/text7"/>
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:background="#fff"
+     android:elevation="4dp"
+     android:id="@+id/layout1"
+     android:layout_marginTop="10dp"
+     android:padding="16dp"
+     android:clickable="true"
+     android:layout_height="wrap_content">
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:clickable="true"
+      android:text="Streams"
+      android:textSize="25dp"
+      android:id="@+id/textstream"/>
+ </LinearLayout>
+ <RelativeLayout
+     android:layout_width="match_parent"
+     android:background="#fff"
+     android:elevation="4dp"
+     android:layout_marginTop="10dp"
+     android:padding="16dp"
+     android:layout_height="wrap_content">
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Diploma"
+      android:clickable="true"
+      android:textSize="25dp"
+      android:id="@+id/textdiploma"/>
+ </RelativeLayout>
+ <RelativeLayout
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:elevation="4dp"
+    android:layout_marginTop="10dp"
+    android:padding="16dp"
+    android:layout_height="wrap_content">
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Scholarships"
+      android:textSize="25dp"
+      android:clickable="true"
+      android:id="@+id/textscholarship"/>
+</RelativeLayout>
+
+ <RelativeLayout
+     android:layout_width="match_parent"
+     android:background="#fff"
+     android:elevation="4dp"
+     android:layout_marginTop="10dp"
+     android:padding="16dp"
+     android:layout_height="wrap_content">
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Short term Courses"
+      android:textSize="25dp"
+      android:clickable="true"
+      android:id="@+id/text3"/>
+ </RelativeLayout>
+ <TextView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="Or"
+     android:gravity="center"
+     android:layout_marginTop="10sp"
+     android:textSize="30dp"
+     android:textColor="#efb516"
+     android:textStyle="bold"
+     android:id="@+id/text5"/>
+ <RelativeLayout
+     android:layout_width="match_parent"
+     android:background="#fff"
+     android:elevation="4dp"
+     android:layout_marginTop="10dp"
+     android:padding="16dp"
+     android:layout_height="wrap_content">
+  <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Jobs after 10th"
+      android:clickable="true"
+      android:textSize="25dp"
+      android:id="@+id/text4"/>
+ </RelativeLayout>
+
+
+
+</LinearLayout>

@@ -211,8 +211,8 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
 
         if(myActivityName.equals("AlphabetDisplayList")) {
 
-            if (listItem == null)
-                listItem = LayoutInflater.from(mContext).inflate(R.layout.adapter, parent, false);
+                if (listItem == null)
+                    listItem = LayoutInflater.from(mContext).inflate(R.layout.adapter, parent, false);
 
 /*
             ListAsyncTask listAsyncTask = new ListAsyncTask();
@@ -220,23 +220,22 @@ public class alphabetAdapter extends ArrayAdapter<data_with_link> {
             image i = new image(position, imageView);
             listAsyncTask.execute(i);
 */
-            TextView textView2 = (TextView) listItem.findViewById(R.id.name);
+                TextView textView2 = (TextView) listItem.findViewById(R.id.name);
 
-            // Display the magnitude of the current earthquake in that TextView
-            String s = null;
-            if (details != null) {
-                s = String.valueOf(details.getAlphabets());
+                                String s = null;
+                if (details != null) {
+                    s = String.valueOf(details.getAlphabets());
 
-               // textView1.setText(s);
-               // GradientDrawable magnitudeCircle = (GradientDrawable) textView1.getBackground();
+                    // textView1.setText(s);
+                    // GradientDrawable magnitudeCircle = (GradientDrawable) textView1.getBackground();
 
-                textView2.setText(details.getTitle());
-                // Get the appropriate background color based on the current earthquake magnitude
-              //  int magnitudeColor = getMagnitudeColor(details.getAlphabets());
+                    textView2.setText(details.getTitle());
+                    // Get the appropriate background color based on the current earthquake magnitude
+                    //  int magnitudeColor = getMagnitudeColor(details.getAlphabets());
 
-                // Set the color on the magnitude circle
-              //  magnitudeCircle.setColor(magnitudeColor);
-            }
+                    // Set the color on the magnitude circle
+                    //  magnitudeCircle.setColor(magnitudeColor);
+                }
         }else
         if(myActivityName.equals("ScholarshipListActivity")) {
 

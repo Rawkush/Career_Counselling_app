@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0e97a9"
+    tools:context="com.example.ankush.hackathon.signuppage">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            android:text="SignUp"
+            android:textSize="45dp" />
+
+
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginLeft="60dp"
+        android:src="@drawable/newuser"
+        />
+
+    <EditText
+        android:id="@+id/username_field"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:padding="15dp"
+        android:background="@drawable/field_background"
+        android:hint="Name..."
+        />
+
+    <EditText
+        android:id="@+id/email_field"
+        android:layout_width="340dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:background="@drawable/field_background"
+        android:layout_height="wrap_content"
+        android:hint="Email..."
+        />
+
+    <EditText
+        android:id="@+id/password_field"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Create Password..."
+        android:padding="15dp"
+        android:inputType="textPassword"
+        android:background="@drawable/field_background"
+        />
+
+    <EditText
+        android:id="@+id/confirmPassword_field"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Confirm Password..."
+        android:padding="15dp"
+        android:inputType="textPassword"
+        android:background="@drawable/field_background"
+        />
+
+    <Button
+        android:id="@+id/signup_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#fff"
+        android:background="@drawable/btn_background"
+        android:text="Sign up"/>
+
+    <TextView
+        android:id="@+id/signIn_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Move To Sign In"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:clickable="true"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_marginStart="100dp"/>
+
+    </LinearLayout>
+</ScrollView>

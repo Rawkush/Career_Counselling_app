@@ -2,6 +2,7 @@
 package com.example.ankush.hackathon;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -28,14 +29,18 @@ public class selectedCareerDetails extends AppCompatActivity {
 private LinearLayout linearLayout;
 private ImageView imageView;
 private    TextView header;
+private ProgressDialog mProgress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selected_career_details);
         Intent i= getIntent();
 
+        mProgress=new ProgressDialog(selectedCareerDetails.this);
+
         String url = i.getStringExtra("url");
-        Log.i("jhs",url);
+        Log.i("show url:",url);
 
         imageView= (ImageView) findViewById(R.id.jobImage);
         header=(TextView)findViewById(R.id.title);
@@ -55,7 +60,12 @@ private    TextView header;
     private  class ListAsyncTask extends AsyncTask<String, Bitmap, ArrayList<data_with_link>> {
 
 
-
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mProgress.setMessage("Loading...");
+            mProgress.show();
+        }
 
         @Override
         protected ArrayList<data_with_link> doInBackground(String... urls) {
@@ -128,7 +138,10 @@ private    TextView header;
 */
         @Override
         protected void onPostExecute(ArrayList<data_with_link> data) {
-            // Clear the adapter of previous earthquake data
+
+            mProgress.dismiss();
+
+            // Clear the adapter of previous data
 
             for(int i=0; i<data.size()  ;i++){
 //check here

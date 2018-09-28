@@ -1,17 +1,10 @@
 package com.example.ankush.hackathon;
 
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,21 +14,8 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-
-/**
- * Created by Ankush on 3/23/2018.
- */
 
 public class scholarshipByOrder extends Fragment  {
 
@@ -190,7 +170,7 @@ public class scholarshipByOrder extends Fragment  {
 
         @Override
         protected void onPostExecute(ArrayList<data_with_link> data) {
-            // Clear the adapter of previous earthquake data
+            // Clear the adapter of previous data
 
 
 
