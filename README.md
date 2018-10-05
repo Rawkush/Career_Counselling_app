@@ -15,6 +15,15 @@ There are all features which are use able for every student in the all type of e
 
 </h1>
 
+
+# Contributors
+
+1. Jeetin9410
+2. MauryaD
+3. Raarav
+
+
+
 # Note
 
-Development of this app is stopped due to bad coding
+Development of this app is stopped due to bad arrangement of files and code
