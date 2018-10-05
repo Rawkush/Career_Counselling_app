@@ -11,7 +11,7 @@ There are all features which are use able for every student in the all type of e
 
 # Screenshot
 <h1 align="center">
-<img src="/github/ezgif.com-video-to-gif.gif" width="280" height="498" alt="Video 1"/>
+<img src="/gif/ezgif.com-video-to-gif.gif" width="280" height="498" alt="Video 1"/>
 
 </h1>
 
