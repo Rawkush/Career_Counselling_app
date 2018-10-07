@@ -5,7 +5,7 @@ There are all features which are use able for every student in the all type of e
 
 
 # Library used
-  *jsoup
+  <b>*jsoup</b>
 
 # ScreenPlay
 
@@ -18,12 +18,20 @@ There are all features which are use able for every student in the all type of e
 
 # Contributors
 
-1. Jeetin9410
-2. MauryaD
-3. Raarav
-
+<ol>
+ <li>
+  <a href"https://github.com/Jeetin9410">Jeetin9410</a>
+ </li>
+ <li>
+  <a href="https://github.com/MauryaD">MauryaD</a>
+ </li>
+ 
+ <li>
+ <a href="https://github.com/Raarav">Raarav</a>
+ </li>
+</ol>
 
 
 # Note
 
-Development of this app is stopped due to bad arrangement of files and code
+<i>Development of this app is stopped due to bad arrangement of files and code</i>
