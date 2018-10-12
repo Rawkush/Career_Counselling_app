@@ -20,7 +20,7 @@ There are all features which are use able for every student in the all type of e
 
 <ol>
  <li>
-  <a href"https://github.com/Jeetin9410">Jeetin9410</a>
+  <a href="https://github.com/Jeetin9410">Jeetin9410</a>
  </li>
  <li>
   <a href="https://github.com/MauryaD">MauryaD</a>
